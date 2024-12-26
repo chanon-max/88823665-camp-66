@@ -8,21 +8,14 @@
 
 <body>
     <div class="container mt-5">
-        <?php $myvar = 2; ?>
-        <h1> สูตรคูณแม่ <?php echo $myvar; ?></h1>
         <?php
-        for($i = 1;$i <= 12; $i++){
-
-            ?>
-            
-        <div class=" row">
-            <div class="h2 col text end "> <?php echo $myvar ?> x <?php echo $i ?> = </div>
-            <?php $totel = $i * $myvar ?>
-            <div class="h2 col text start"> <?php echo $totel ?> </div>
-        </div>
-        <?php
+        $multiplication = 2; 
+        echo "ตารางสูตรคูณแม่ $multiplication:<br>";
+        for ($i = 1; $i <= 12; $i++) {
+            echo "$multiplication x $i = " . ($multiplication * $i) . "<br>";
         }
         ?>
+
     </div>
 
 </body>
