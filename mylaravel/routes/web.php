@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\loginController;
-
+use App\Http\Controllers\registerController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/hello', function () {
     return "<h1>HELLO WOLRD</h1>";
@@ -33,3 +34,8 @@ Route::get(
     '/login',
     [loginController::class, 'index']
 );
+Route::get('/register',
+    [RegisterController::class, 'index']);
+
+    Route::get('/home',
+    [HomeController::class, 'index']);
