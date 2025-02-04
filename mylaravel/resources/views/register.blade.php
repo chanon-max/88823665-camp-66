@@ -10,17 +10,18 @@
     <div class="card">
       <div class="card-body register-card-body">
         <p class="register-box-msg">Register a new membership</p>
-        <form action="../index3.html" onsubmit="return clickme()" method="post">
+        <form action="{{url('/register')}}" onsubmit="return clickme()" method="post">
+        @csrf
           <div class="input-group mb-3">
-            <input type="text" id="name" class="form-control" placeholder="Full Name" />
+            <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" />
             <div class="input-group-text"><span class="bi bi-person"></span></div>
           </div>
           <div class="input-group mb-3">
-            <input type="email" id="email" class="form-control" placeholder="Email" />
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" />
             <div class="input-group-text"><span class="bi bi-envelope"></span></div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" id="password" class="form-control" placeholder="Password" />
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
             <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
           </div>
           <!--begin::Row-->
