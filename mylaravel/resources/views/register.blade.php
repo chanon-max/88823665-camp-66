@@ -10,17 +10,17 @@
     <div class="card">
       <div class="card-body register-card-body">
         <p class="register-box-msg">Register a new membership</p>
-        <form action="../index3.html" method="post">
+        <form action="../index3.html" onsubmit="return clickme()" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Full Name" />
+            <input type="text" id="name" class="form-control" placeholder="Full Name" />
             <div class="input-group-text"><span class="bi bi-person"></span></div>
           </div>
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email" />
+            <input type="email" id="email" class="form-control" placeholder="Email" />
             <div class="input-group-text"><span class="bi bi-envelope"></span></div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password" />
+            <input type="password" id="password" class="form-control" placeholder="Password" />
             <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
           </div>
           <!--begin::Row-->
@@ -43,6 +43,7 @@
           </div>
           <!--end::Row-->
         </form>
+        <button type="button" class="btn" onclick="clickme()"> TEST JS </button>
         <div class="social-auth-links text-center mb-3 d-grid gap-2">
           <p>- OR -</p>
           <a href="#" class="btn btn-primary">
@@ -61,4 +62,49 @@
     </div>
   </div>
 </div>
+  @endsection
+
+  @section('scripts')
+  <script>
+  console.log("Hello World")
+  //ALERT("Hello World")
+  </script>
+
+  <script>
+  //alert("Hello World!")
+
+  let myval
+  var myval2
+  pi = 2
+  PI = 2
+  //console.log(PI,pi)
+
+  let myarry = [];
+  myarry = Array()
+  myarry[0] = 1
+  myarry["1"] = 2
+  myarry.push(3)
+  myarry.push(4)
+  console.log(myarry)
+  myarry.pop()
+  console.log(myarry)
+  for(a=1; a<10 ;a++){
+    console.log(a);
+  }
+
+function clickme(){
+    let name = document.getElementById('name');
+        name.value = "new test"
+        name = $('#name').val("new with jquery")
+
+    console.log("Hello!",name)
+
+    return fales;
+    }
+
+$(document).ready(function(){
+    //alert("Hello World")
+    })
+
+  </script>
   @endsection
