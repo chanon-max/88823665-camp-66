@@ -95,7 +95,7 @@
                                                             <div class="d-flex justify-content-center gap-1">
                                                                 <a href="{{ url('/user/' . $user->id) }}"
                                                                     class="btn btn-warning btn-sm">Edit</a>
-                                                                <form action="{{ url('/user/' . $user->id) }}"
+                                                                <form action="{{ url('/user/' . $user->id) }}" onsubmit = "return clickme(event)"
                                                                     method="post">
                                                                     @csrf
                                                                     @method('delete')
@@ -178,3 +178,31 @@
 
     </html>
 @endsection
+  @section('scripts')
+
+  <script>
+
+
+   function clickme(event) {
+    event.preventDefault();
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        event.target.submit();
+      }
+    });
+
+    return false;
+  }
+
+
+      </script>
+      @endsection

@@ -6,7 +6,11 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+use App\Http\Middleware;
 
+//Route::get('/product',[ProductController::class,'index'])->middleware([CheckLogin::class,]);
+//Route::post('/product',[ProductController::class,'store'])->middleware([CheckLogin::class,]);
 Route::get('/hello', function () {
     return "<h1>HELLO WOLRD</h1>";
 });
@@ -38,6 +42,11 @@ Route::get(
     "/login",
     [LoginController::class, 'index']
 );
+Route::post(
+    "/login",
+    [LoginController::class, 'login']
+);
+
 
 Route::get(
     "/register",
