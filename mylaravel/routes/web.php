@@ -7,10 +7,12 @@ use App\Http\Controllers\registerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-use App\Http\Middleware;
+use App\Http\Middleware\CheckLogin;
 
-//Route::get('/product',[ProductController::class,'index'])->middleware([CheckLogin::class,]);
-//Route::post('/product',[ProductController::class,'store'])->middleware([CheckLogin::class,]);
+
+Route::get('/product',[ProductController::class,'index'])->middleware([CheckLogin::class,]);
+
+Route::post('/product',[ProductController::class,'store'])->middleware([CheckLogin::class,]);
 Route::get('/hello', function () {
     return "<h1>HELLO WOLRD</h1>";
 });

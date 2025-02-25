@@ -14,13 +14,14 @@
                     $error = session()->get('error');
                     if($error){
                 ?>
-                <div class="text-danger:>
+                <div class="text-danger">
                     {{$error}}
                 </div>
                 <?php
                     }
                 ?>
                 <form action="{{url('/login')}}" method="post">
+                @csrf
                     <div class="input-group mb-3">
                         <input type="email" name="email"value="{{isset($email) ? $email : ""}}"class="form-control" placeholder="Email" />
                         <div class="input-group-text"><span class="bi bi-envelope"></span></div>
